@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Piazze Siciliane</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="header-title">Piazze Siciliane</h1>
+                <nav class="header-nav">
+                    <a href="index.html" class="nav-button active">HOME</a>
+                    <a href="piazze/list.html" class="nav-button">LISTA PIAZZE</a>
+                    <a href="https://www.abacatania.it/" class="nav-button">CONTATTI</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- City Carousel (hidden radio inputs for state management) -->
+        <input type="radio" name="city-carousel" id="city-messina" value="messina" checked>
+        <input type="radio" name="city-carousel" id="city-catania" value="catania">
+        <input type="radio" name="city-carousel" id="city-palermo" value="palermo">
+        <input type="radio" name="city-carousel" id="city-taormina" value="taormina">
+        <input type="radio" name="city-carousel" id="city-acireale" value="acireale">
+        <input type="radio" name="city-carousel" id="city-siragusa" value="siragusa">
+        <input type="radio" name="city-carousel" id="city-ragusa" value="ragusa">
+
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <!-- Messina Slide -->
+                <div class="city-slide" id="slide-messina">
+                    <label class="hero-arrow hero-arrow-left" for="city-ragusa">←</label>
+                    <a href="piazze/dettaglio-messina.html" class="hero-title">MESSINA</a>
+                    <label class="hero-arrow hero-arrow-right" for="city-catania">→</label>
+                </div>
+                
+                <!-- Catania Slide -->
+                <div class="city-slide" id="slide-catania">
+                    <label class="hero-arrow hero-arrow-left" for="city-messina">←</label>
+                    <a href="piazze/dettaglio-catania.html" class="hero-title">CATANIA</a>
+                    <label class="hero-arrow hero-arrow-right" for="city-palermo">→</label>
+                </div>
+                
+                <!-- Palermo Slide -->
+                <div class="city-slide" id="slide-palermo">
+                    <label class="hero-arrow hero-arrow-left" for="city-catania">←</label>
+                    <a href="" class="hero-title">PALERMO</a>
+                    <label class="hero-arrow hero-arrow-right" for="city-taormina">→</label>
+                </div>
+                
+                <!-- Taormina Slide -->
+                <div class="city-slide" id="slide-taormina">
+                    <label class="hero-arrow hero-arrow-left" for="city-palermo">←</label>
+                    <a href="piazze/dettaglio-taormina.html" class="hero-title">TAORMINA</a>
+                    <label class="hero-arrow hero-arrow-right" for="city-acireale">→</label>
+                </div>
+                
+                <!-- Acireale Slide -->
+                <div class="city-slide" id="slide-acireale">
+                    <label class="hero-arrow hero-arrow-left" for="city-taormina">←</label>
+                    <a href="piazze/dettaglio-acireale.html" class="hero-title">ACIREALE</a>
+                    <label class="hero-arrow hero-arrow-right" for="city-siragusa">→</label>
+                </div>
+                
+                <!-- Siragusa Slide -->
+                <div class="city-slide" id="slide-siragusa">
+                    <label class="hero-arrow hero-arrow-left" for="city-acireale">←</label>
+                    <a href="piazze/dettaglio.html?city=siragusa" class="hero-title">SIRAGUSA</a>
+                    <label class="hero-arrow hero-arrow-right" for="city-ragusa">→</label>
+                </div>
+                
+                <!-- Ragusa Slide -->
+                <div class="city-slide" id="slide-ragusa">
+                    <label class="hero-arrow hero-arrow-left" for="city-siragusa">←</label>
+                    <a href="piazze/dettaglio.html?city=ragusa" class="hero-title">RAGUSA</a>
+                    <label class="hero-arrow hero-arrow-right" for="city-messina">→</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Intro Text -->
+        <section class="home-intro" style="padding: 40px 24px; text-align: center;">
+            <h2 style="font-size: 32px; color: var(--primary-green); margin-bottom: 16px;">Scoprite le piazze più belle della Sicilia</h2>
+            <p style="font-size: 20px; color: #333; max-width: 800px; margin: 0 auto;">
+                Esplorate la storia, l'arte e la cultura delle piazze siciliane: luoghi di incontro, tradizione e bellezza. Da Messina a Palermo, da Catania a Taormina, ogni piazza racconta una storia unica. Lasciatevi guidare tra scorci suggestivi, monumenti, eventi e curiosità. Il nostro sito vi accompagna alla scoperta delle piazze più affascinanti dell'isola, per vivere la Sicilia autentica.
+            </p>
+        </section>
+
+        <!-- Piazze in primo piano Section -->
+        <section class="section-header">
+            <h2 class="section-title-large">Piazze in primo piano</h2>
+        </section>
+        <section class="piazze-section">
+            <div class="piazze-grid">
+                <div class="piazza-card cliccabile" onclick="window.location.href='piazze/dettaglio-messina.html'">
+                    <div class="piazza-image" style="background-image: url('../img/duomo_messina.jpg'); background-size: cover;"></div>
+                    <p class="piazza-name">Piazza Duomo<br>-Messina</p>
+                </div>
+                <div class="piazza-card cliccabile" onclick="window.location.href='piazze/dettaglio-catania.html'">
+                    <div class="piazza-image" style="background-image: url('../img/duomo_catania.jpg'); background-size: cover;"></div>
+                    <p class="piazza-name">Piazza Del Duomo<br>-Catania</p>
+                </div>
+                <div class="piazza-card">
+                    <div class="piazza-image" style="background-image: url('../img/piazza_palermo.jpg'); background-size: cover;"></div>
+                    <p class="piazza-name">Piazza Pretoria<br>-Palermo</p>
+                </div>
+                <div class="piazza-card cliccabile" onclick="window.location.href='piazze/dettaglio-taormina.html'">
+                    <div class="piazza-image" style="background-image: url('../img/piazza-ix-aprile-taormina-ed169ddc.jpeg'); background-size: cover;"></div>
+                    <p class="piazza-name">Piazza IX Aprile<br>-Taormina</p>
+                </div>
+                <div class="piazza-card cliccabile" onclick="window.location.href='piazze/dettaglio-acireale.html'">
+                    <div class="piazza-image" style="background-image: url('../img/duomo_acireale.jpg'); background-size: cover;"></div>
+                    <p class="piazza-name">Piazza Duomo<br>-Acireale</p>
+                </div>
+                <div class="piazza-card">
+                    <div class="piazza-image" style="background-image: url('../img/piazza_ragusa.jpg'); background-size: cover;"></div>
+                    <p class="piazza-name">Piazza Ragusa<br>-Ragusa</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <div style="margin-top: 40px;">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" style="width: 40px; height: 40px; filter: invert(1); margin: 0 16px;">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" style="width: 40px; height: 40px; filter: invert(1); margin: 0 16px;">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter" style="width: 40px; height: 40px; filter: invert(1); margin: 0 16px;">
+            </div>
+            <div style="margin-top: 24px; color: #fff; font-size: 18px;">
+                © 2026 Piazze Siciliane. Tutti i diritti riservati.
+            </div>
+            <div style="margin-top: 8px; color: #fff; font-size: 16px;">
+                Accademia di Belle Arti 2026
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piazza Duomo - Messina</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <a href="../index.html" class="header-title">Piazze Siciliane</a>
+                <nav class="header-nav">
+                    <a href="../index.html" class="nav-button">HOME</a>
+                    <a href="list.html" class="nav-button">LISTA PIAZZE</a>
+                    <a href="#contatti" class="nav-button">CONTATTI</a>
+                </nav>
+            </div>
+        </header>
+        <!-- Section Title -->
+        <section class="section-header">
+            <h2 class="section-title-large">Informazioni Piazza</h2>
+            <div class="piazza-bread">Piazza Duomo - Messina</div>
+        </section>
+        <!-- Detail Content -->
+        <section class="detail-section" style="min-height: 1400px; display: block;">
+            <!-- Description Text -->
+            <div class="detail-text">
+                <p>
+                    Piazza Duomo di Messina è il fulcro storico, religioso e culturale della città, situata nel centro antico e circondata da monumenti di straordinaria importanza. Al centro si erge la <b>Cattedrale di Messina</b>, fondata in epoca normanna e più volte ricostruita dopo devastanti terremoti e bombardamenti. La facciata, in stile romanico e gotico, è impreziosita da marmi policromi e portali rinascimentali, mentre l’interno custodisce mosaici, opere d’arte e il secondo organo a canne più grande d’Italia.
+                </p>
+                <p>
+                    Accanto al Duomo si trova il <b>campanile</b>, alto 90 metri, che ospita il celebre <b>orologio astronomico</b>, il più grande e complesso al mondo. Ogni giorno a mezzogiorno, le figure meccaniche si animano in uno spettacolo unico, attirando visitatori da tutto il mondo. La piazza è anche impreziosita dalla <b>Fontana di Orione</b>, capolavoro cinquecentesco di Giovanni Angelo Montorsoli, definita da Bernard Berenson “la più bella fontana del Cinquecento in Europa”.
+                </p>
+                <p>
+                    Piazza Duomo è stata teatro di eventi storici, processioni religiose e manifestazioni culturali. Dopo il terremoto del 1908, la piazza e i suoi edifici furono ricostruiti, restituendo alla città il suo simbolo identitario. Qui si celebrano le principali feste cittadine, tra cui la Vara dell’Assunta e la Madonna della Lettera, patrona di Messina.
+                </p>
+                <p>
+                    Attorno alla piazza si affacciano palazzi storici, monumenti e la statua dell’Immacolata, mentre nelle vicinanze si trovano la Fontana dei Quattro Cavallucci e il Museo del Tesoro del Duomo, che conserva preziosi oggetti di culto e opere d’arte. Piazza Duomo rappresenta oggi un luogo di incontro tra storia, arte e spiritualità, punto di riferimento per cittadini e turisti, e simbolo della resilienza e rinascita di Messina.
+                </p>
+            </div>
+            <!-- Image Gallery at the bottom -->
+            <div class="detail-image-container" style="margin-top: 60px;">
+                <div class="detail-image zoomable-image" tabindex="0" style="background-image: url('../img/duomo_messina.jpg'); background-size: cover;"></div>
+            </div>
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const img = document.querySelector('.zoomable-image');
+                if (img) {
+                    img.addEventListener('click', function() {
+                        img.classList.toggle('zoomed');
+                        img.focus();
+                    });
+                    img.addEventListener('keydown', function(e) {
+                        if ((e.key === 'Enter' || e.key === ' ') && !img.classList.contains('zoomed')) {
+                            img.classList.add('zoomed');
+                            img.focus();
+                            e.preventDefault();
+                        } else if ((e.key === 'Enter' || e.key === ' ') && img.classList.contains('zoomed')) {
+                            img.classList.remove('zoomed');
+                            e.preventDefault();
+                        }
+                    });
+                }
+            });
+            </script>
+        </section>
+        <!-- Footer -->
+        <footer class="footer" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <div style="margin-top: 40px;">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" style="width: 40px; height: 40px; filter: invert(1); margin: 0 16px;">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" style="width: 40px; height: 40px; filter: invert(1); margin: 0 16px;">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter" style="width: 40px; height: 40px; filter: invert(1); margin: 0 16px;">
+            </div>
+            <div style="margin-top: 24px; color: #fff; font-size: 18px;">
+                © 2026 Piazze Siciliane. Tutti i diritti riservati.
+            </div>
+            <div style="margin-top: 8px; color: #fff; font-size: 16px;">
+                Accademia di Belle Arti 2026
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
