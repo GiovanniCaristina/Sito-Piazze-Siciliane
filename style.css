@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #169976;
+    --dark-green: #128062;
+    --light-gray: #d9d9d9;
+    --text-gray: #727272;
+    --text-black: #000000;
+    --white: #ffffff;
+    --font-primary: 'Josefin Sans', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    font-family: var(--font-primary);
+    color: var(--text-black);
+    background-color: var(--white);
+}
+
+.page-container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+/* Hide radio inputs */
+input[name="city-carousel"] {
+    display: none !important;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-green);
+    padding: 20px 24px;
+    height: 115px;
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 41px;
+    color: var(--white);
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.header-nav {
+    display: flex;
+    gap: 32px;
+    margin-left: auto;
+}
+
+.nav-button {
+    background-color: var(--dark-green);
+    color: var(--white);
+    border: none;
+    border-radius: 14px;
+    padding: 20px 30px;
+    font-size: 41px;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: var(--primary-green);
+}
+
+.nav-button.active {
+    background-color: var(--primary-green);
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://via.placeholder.com/1440x300?text=MESSINA');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background-image 0.5s ease;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.city-slide {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Show the active city slide */
+#city-messina:checked ~ .hero-section .city-slide#slide-messina { display: flex; }
+#city-catania:checked ~ .hero-section .city-slide#slide-catania { display: flex; }
+#city-palermo:checked ~ .hero-section .city-slide#slide-palermo { display: flex; }
+#city-taormina:checked ~ .hero-section .city-slide#slide-taormina { display: flex; }
+#city-acireale:checked ~ .hero-section .city-slide#slide-acireale { display: flex; }
+#city-siragusa:checked ~ .hero-section .city-slide#slide-siragusa { display: flex; }
+#city-ragusa:checked ~ .hero-section .city-slide#slide-ragusa { display: flex; }
+
+.hero-arrow {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 40px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s ease;
+    z-index: 10;
+    position: absolute;
+}
+
+.hero-arrow-left {
+    left: 40px;
+}
+
+.hero-arrow-right {
+    right: 40px;
+}
+
+.hero-arrow:hover {
+    transform: scale(1.2);
+}
+
+.hero-title {
+    font-size: 80px;
+    color: var(--white);
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+}
+
+.hero-title:hover {
+    transform: scale(1.05);
+}
+
+/* Section Styles */
+.section-header {
+    background-color: var(--primary-green);
+    padding: 20px 24px;
+    margin-top: 40px;
+    border-radius: 0 31px 16px 0;
+    width: fit-content;
+}
+
+.section-title {
+    font-size: 41px;
+    color: var(--white);
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.section-title-large {
+    font-size: 41px;
+    color: var(--white);
+    font-weight: 400;
+}
+
+.piazze-section {
+    padding: 40px 24px;
+    position: relative;
+}
+
+/* City Selector */
+.city-selector {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: flex-end;
+    padding: 20px 24px 0;
+    margin-bottom: 20px;
+}
+
+.city-selector-full {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: flex-end;
+    padding: 40px 24px;
+}
+
+.city-name {
+    background-color: var(--light-gray);
+    color: var(--text-gray);
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 42px;
+    box-shadow: 6px 5px 5px rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+    font-family: var(--font-secondary);
+}
+
+.selector-arrow {
+    background: none;
+    border: none;
+    color: var(--text-black);
+    font-size: 32px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s ease;
+}
+
+.selector-arrow:hover {
+    transform: scale(1.2);
+}
+
+/* Piazza Cards Grid */
+.piazze-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 30px 0;
+    padding: 0 24px;
+}
+
+.piazza-card {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.piazza-card:hover {
+    transform: translateY(-5px);
+}
+
+.piazza-image {
+    width: 100%;
+    height: 442px;
+    background-color: var(--light-gray);
+    border-radius: 35px;
+    margin-bottom: 15px;
+}
+
+.piazza-name {
+    font-size: 32px;
+    color: var(--text-black);
+    font-family: var(--font-primary);
+    font-weight: 400;
+    line-height: 1.2;
+    padding: 0 10px;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    gap: 20px;
+}
+
+.carousel-arrow {
+    background: none;
+    border: none;
+    color: var(--text-black);
+    font-size: 32px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    transform: scale(1.2);
+}
+
+.carousel-arrow-left {
+    order: -1;
+}
+
+.carousel-arrow-right {
+    order: 1;
+}
+
+/* Detail Section */
+.detail-section {
+    padding: 40px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.detail-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-black);
+    font-family: var(--font-secondary);
+}
+
+.detail-text p {
+    margin-bottom: 20px;
+}
+
+.detail-image-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.detail-image {
+    width: 100%;
+    height: 940px;
+    background-color: var(--light-gray);
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Breadcrumb */
+.piazza-bread {
+    background-color: var(--primary-green);
+    color: var(--white);
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-green);
+    height: 266px;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .piazze-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .detail-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .header-nav {
+        gap: 16px;
+    }
+
+    .nav-button {
+        padding: 15px 20px;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .piazze-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .header {
+        height: auto;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-content {
+        flex-direction: column;
+    }
+
+    .header-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .hero-content {
+        gap: 40px;
+    }
+
+    .section-title,
+    .section-title-large {
+        font-size: 28px;
+    }
+
+    .piazza-image {
+        height: 300px;
+    }
+
+    .detail-image {
+        height: 250px;
+    }
+
+    .detail-text {
+        font-size: 16px;
+    }
+}
+
+/* Hero Section with city-specific images */
+#city-messina:checked ~ .hero-section {
+    background-image: url('img/duomo_messina.jpg');
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#city-catania:checked ~ .hero-section {
+    background-image: url('img/duomo_catania.jpg');
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#city-palermo:checked ~ .hero-section {
+    background-image: url('img/piazza_palermo.jpg');
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#city-taormina:checked ~ .hero-section {
+    background-image: url('img/piazza-ix-aprile-taormina-ed169ddc.jpeg');
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#city-acireale:checked ~ .hero-section {
+    background-image: url('img/duomo_acireale.jpg');
+    
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#city-siragusa:checked ~ .hero-section {
+    background-image: url('img/piazza_duomo_ortigia_870x410_2.jpg');
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#city-ragusa:checked ~ .hero-section {
+    background-image: url('img/piazza_ragusa.jpg');
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
